@@ -43,7 +43,7 @@ sudo docker pull raspbian/jessie
 # mkdir -p /home/pi/rpi-docker-motion
 
 # Download Dockerfile
-# wget -P /home/pi/rpi-docker-motion https://raw.githubusercontent.com/remonlam/rpi-docker-motion/master/Dockerfile
+wget -P /home/pi/motion https://raw.githubusercontent.com/bizarrelabs/motion/master/Dockerfile
 
 # Run the graphical raspi-conf tool, to setup the host
 echo "NOTE: don't forget to turn on the cam ;-) oh and you need to reboot"
