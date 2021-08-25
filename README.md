@@ -1,6 +1,26 @@
 #Motion in a Container on Raspbian Jessie
 ![Docker & Raspberry Pi](/images/docker+rpi.png)
 
+
+wget https://raw.githubusercontent.com/bizarrelabs/motion/master/pre-install.sh && chmod 755 pre-install.sh
+
+./pre-install.sh
+
+cd /home/pi/motion && docker build -t motion .
+
+docker run -d -p 80:8081 --device=/dev/video0 motion /entrypoint.sh
+
+docker exec -it d59561f2bd9b bash
+
+####But how can I start the container at boot Well that's kinda easy just add the command "docker start 65875d7b0658" (<-- that number is the container ID) to "/etc/rc.local"
+
+vcgencmd get_camera
+raspistill -v
+
+
+
+
+
 ##How to get all of this running
 Well first of all you need to have a Raspberry Pi and a micro SD card ( minimal 8GB).
 Second you need to have Raspbian Jessie, why not Wheezy? well currently Jessie is the only version that supports Docker out of the box (well sort of).
