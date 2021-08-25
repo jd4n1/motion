@@ -40,7 +40,7 @@ sudo docker pull raspbian/jessie
 # sudo docker rmi remonlam/rpi-rasbian:jessie
 
 # Create directory for Dockerfile
-# mkdir -p /home/pi/rpi-docker-motion
+mkdir -p /home/pi/motion
 
 # Download Dockerfile
 wget -P /home/pi/motion https://raw.githubusercontent.com/bizarrelabs/motion/master/Dockerfile
