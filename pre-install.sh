@@ -14,9 +14,8 @@ echo 'sudo modprobe bcm2835-v4l2' | sudo tee --append /etc/rc.local
 echo 'exit 0' | sudo tee --append /etc/rc.local
 
 # sudo apt-get install -y docker.io
+if [ "$(systemctl is-active docker)" = "inactive" ]; then curl -fsSL get.docker.com | sh && sudo usermod -aG docker ${USER} ; fi
 
-curl -fsSL get.docker.com | sh
-sudo usermod -aG docker ${USER}
 
 ## Enable none root access to Docker
 # Add the docker group if it's not already created
@@ -29,7 +28,7 @@ sudo usermod -aG docker ${USER}
 #sudo service docker restart
 
 # Pull Raspbian Jessie to check if Docker is running okay
-sudo docker pull raspbian/jessie
+# sudo docker pull raspbian/jessie
 
 # Chekck if the image has been pulled correctly
 # Their should be 2 images remonlam/rpi-rasbian:jessie and ...:latest
